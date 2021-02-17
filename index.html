@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,800;1,200;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+
+    <title>Me!</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav id="navbar">
+      <a href="\" class="nav-logo">
+        <svg href="\" id="logo" class="center" width="60" height="60">
+          <circle class="logo-circle" r="25" cx="30" cy="30" />
+          <text
+            class="logo-text"
+            x="31"
+            y="35"
+            text-anchor="middle"
+            alignment-baseline="middle"
+          >
+            DJ
+          </text>
+        </svg>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link hidden" href="#about-section">About</a>
+        <a class="nav-link hidden" href="#projects-section">Projects</a>
+        <a class="nav-link hidden" href="#contact-section">Contact</a>
+        <a class="btn hidden" href="">Resume</a>
+      </div>
+    </nav>
+
+    <main id="main" class="hidden">
+      <!-- Contact links -->
+      <ul id="contact-links" class="hidden">
+        <li>
+          <a href="http://github.com">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a href="http://linkedin.com">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="http://twitter.com">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+      </ul>
+      <!-- Home -->
+      <section id="home" class="hidden">
+        <div class="home-container">
+          <p>Hi, my name is</p>
+          <h1>David Jokhadze.</h1>
+          <h1>I build stuff for the web.</h1>
+          <h4>
+            I'm a web developer, based in Netherlands. Specializing in building
+            websites and web applications.
+          </h4>
+        </div>
+        <a href="#about" class="btn">See more...</a>
+      </section>
+
+      <!-- About -->
+      <span id="about-section"></span>
+      <section id="about" class="fade-in">
+        <h1 class="header">About Me<span></span></h1>
+        <div class="about-container">
+          <div class="about-content">
+            <p>Hello! I'm David, a web developer.</p>
+            <p>
+              I enjoy creating things that live on the internet, whether that be
+              websites, applications, or anything in between. My goal is to
+              always build products that provide the most user friendly
+              interface.
+            </p>
+            <p>
+              I was an IT Support Engineer for over 10 years. Got interested in
+              programming and started learning C++ with Books at first. Later
+              joined the coding bootcamp
+              <a href="https://www.lewagon.com/" target="_blank">"Le Wagon"</a>
+              and shortly after graduation I started working as a software
+              engineer.
+            </p>
+            <p>Here are the technologies that I use mostly:</p>
+            <ul>
+              <li>JavaScript</li>
+              <li>React</li>
+              <li>HTML & CSS/SCSS</li>
+              <li>Node.js</li>
+              <li>Ruby</li>
+              <li>Ruby on Rails</li>
+            </ul>
+          </div>
+          <div class="about-img">
+            <img src="./me2.jpg" alt="photo" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <span id="projects-section"></span>
+      <section id="projects" class="fade-in">
+        <h1 class="header">Things I've built</h1>
+        <!-- Project 1 -->
+        <div class="proj-container fade-in">
+          <div class="proj-img">
+            <a href="https://github.com">
+              <img src="./images/minesweeper.png" alt="" />
+            </a>
+          </div>
+          <div class="proj-content">
+            <div class="proj-title">
+              <p>Featured Project</p>
+              <h1>Minesweeper</h1>
+            </div>
+            <p class="proj-desc">
+              A classic Windows OS game - Minesweeper. Full-stack version, with
+              opportunity to save records. All of the game logic lays in the
+              back-end to avoid cheating.
+            </p>
+            <ul class="proj-tech">
+              <li>React</li>
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>MongoDB/Mongoose</li>
+            </ul>
+            <div class="proj-links">
+              <a href="https://github.com" target="_blank"
+                ><i class="fab fa-github"></i>
+              </a>
+              <a href="https://github.com" target="_blank"
+                ><i class="fas fa-external-link-alt"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- Project 2 (reverse)-->
+        <div class="proj-container reverse fade-in">
+          <div class="proj-img">
+            <a href="https://github.com">
+              <img src="./images/scheduler_wall.jpeg" alt="" />
+            </a>
+          </div>
+          <div class="proj-content reverse">
+            <div class="proj-title">
+              <p>Featured Project</p>
+              <h1>Scheduler</h1>
+            </div>
+            <p class="proj-desc">
+              Scheduler web application is an improved 'Todo app' with User
+              authentication and calendar.
+            </p>
+            <ul class="proj-tech">
+              <li>React</li>
+              <li>Ruby on Rails</li>
+              <li>Postgresql</li>
+            </ul>
+            <div class="proj-links">
+              <a href="https://github.com" target="_blank"
+                ><i class="fab fa-github"></i>
+              </a>
+              <a href="https://github.com" target="_blank"
+                ><i class="fas fa-external-link-alt"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <span id="contact-section"></span>
+      <section id="contact" class="fade-in"></section>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
