@@ -48,7 +48,7 @@ const navbar = document.getElementById("navbar");
 const homeSection = document.getElementById("home");
 
 const fixNav = new IntersectionObserver(
-  (entries, fixNav) => {
+  (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting || main.classList.contains("hidden")) {
         navbar.classList.remove("scroll");
@@ -61,3 +61,35 @@ const fixNav = new IntersectionObserver(
 );
 
 fixNav.observe(homeSection);
+
+// Contacts Observer and resize listener
+const contactSection = document.getElementById("contact");
+
+let width = window.innerWidth;
+
+window.onresize = () => {
+  width = window.innerWidth;
+
+  if (width < 1024) {
+    contactLinks.classList.add("footer");
+  } else {
+    contactLinks.classList.remove("footer");
+  }
+};
+
+const showContactInfo = new IntersectionObserver(
+  (entries) => {
+    if (width < 1024) return;
+
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        contactLinks.classList.remove("footer");
+      } else {
+        contactLinks.classList.add("footer");
+      }
+    });
+  },
+  { threshold: 0.9 }
+);
+
+showContactInfo.observe(contactSection);
