@@ -1,7 +1,7 @@
 // Page Loading
 const logo = document.getElementById("logo");
 const main = document.getElementById("main");
-const navLinks = [...document.querySelector(".nav-links").children];
+const navLinksChilds = [...document.querySelector(".nav-links").children];
 const home = document.getElementById("home");
 const contactLinks = document.getElementById("contact-links");
 
@@ -11,7 +11,7 @@ setTimeout(() => {
 
 setTimeout(() => {
   main.classList.remove("hidden");
-  navLinks.forEach((link) => {
+  navLinksChilds.forEach((link) => {
     link.classList.remove("hidden");
   });
 }, 3000);
@@ -93,3 +93,23 @@ const showContactInfo = new IntersectionObserver(
 );
 
 showContactInfo.observe(contactSection);
+
+// Navbar responsive menu
+const burger = document.getElementById("burger-link");
+const navLinks = document.querySelector(".nav-links");
+
+setTimeout(() => {
+  burger.classList.remove("hidden");
+}, 3000);
+
+burger.addEventListener("click", () => {
+  burger.classList.toggle("clicked");
+  navLinks.classList.toggle("show");
+  main.classList.toggle("blur");
+});
+
+main.addEventListener("click", () => {
+  burger.classList.remove("clicked");
+  navLinks.classList.remove("show");
+  main.classList.remove("blur");
+});

@@ -44,6 +44,7 @@ body {
 #main {
   padding: 0 15rem;
   position: relative;
+  transition: filter 0.3s ease-in-out;
 }
 
 #main.hidden {
@@ -74,7 +75,7 @@ p {
   font-weight: 500;
 }
 
-/* SVG stuff */
+/* SVG stuff Logo*/
 #logo {
   transition: all 0.5s ease;
   transform-origin: center;
@@ -130,7 +131,7 @@ p {
   }
 }
 
-/* Navbar, links, buttons, svg */
+/* Navbar, links, buttons */
 #navbar {
   position: fixed;
   top: 0;
@@ -241,6 +242,85 @@ p {
   background-color: var(--lnk-hover-clr);
 }
 
+#burger-link {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  padding-top: 1.5rem;
+  cursor: pointer;
+  display: none;
+  z-index: 100;
+  transition: opacity 0.3s ease;
+}
+
+#burger-link.hidden {
+  opacity: 0;
+}
+
+.burger {
+  position: relative;
+  height: 2px;
+  width: 40px;
+  background-color: var(--lnk-clr);
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--lnk-clr);
+  transform-origin: 50%;
+}
+
+.burger::before {
+  transform: translateY(-15px);
+}
+
+.burger::after {
+  transform: translateY(15px);
+}
+
+#burger-link.clicked .burger {
+  transition: transform 0.3s ease-in-out 0.3s;
+  transform: rotate(360deg);
+  background-color: transparent;
+}
+
+#burger-link.clicked .burger::before {
+  animation: top-line 0.3s forwards;
+}
+
+#burger-link.clicked .burger::after {
+  animation: bottom-line 0.3s forwards;
+}
+
+@keyframes top-line {
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes bottom-line {
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: rotate(-45deg);
+  }
+}
+
 /* Contact links */
 #contact-links {
   position: fixed;
@@ -286,7 +366,7 @@ p {
 
 .fade-in {
   opacity: 0;
-  transform: translateY(20%);
+  transform: translateY(5rem);
 }
 
 section {
@@ -300,7 +380,6 @@ section {
 
 section.hidden {
   opacity: 0;
-  transform: translateX(-50%);
 }
 
 .header {
@@ -672,6 +751,33 @@ section.hidden {
     box-shadow: none;
     width: 100%;
     padding: 0;
+  }
+
+  #burger-link {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    height: 100vh;
+    width: 60%;
+    background-color: var(--bg-clr-darker);
+    justify-content: space-between;
+    padding: 30vh 0;
+    box-shadow: -10px 0 30px -15px rgba(0, 0, 0, 0.6);
+    transform: translateX(100vw);
+  }
+
+  .nav-links.show {
+    transform: translateX(0);
+  }
+
+  #main.blur {
+    filter: blur(5px) brightness(0.7);
+    user-select: none;
   }
 }
 
