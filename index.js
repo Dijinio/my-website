@@ -108,8 +108,14 @@ burger.addEventListener("click", () => {
   main.classList.toggle("blur");
 });
 
-main.addEventListener("click", () => {
+function hideSidebar() {
   burger.classList.remove("clicked");
   navLinks.classList.remove("show");
   main.classList.remove("blur");
+}
+
+main.addEventListener("click", hideSidebar);
+
+navLinksChilds.forEach((link) => {
+  link.addEventListener("click", hideSidebar);
 });
