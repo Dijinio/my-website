@@ -610,7 +610,7 @@ section.hidden {
   min-height: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 3em;
   background-color: var(--bg-clr-darker);
   border-radius: 3px;
@@ -703,6 +703,11 @@ section.hidden {
   font-size: var(--fnt-sm);
   line-height: 3rem;
   color: var(--primary-text-color);
+}
+
+.page-footer i {
+  font-size: var(--fnt-sm);
+  color: var(--lnk-clr);
 }
 
 /* Responsive */
