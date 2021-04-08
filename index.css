@@ -590,6 +590,10 @@ section.hidden {
   transition: color 0.3s ease-in-out;
 }
 
+.proj-links a {
+  text-decoration: none;
+}
+
 .proj-links a:hover i {
   color: var(--lnk-clr);
 }
