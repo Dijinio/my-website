@@ -4,388 +4,286 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="David Jokhadze is a Web Developer, specializing in building websites and web applications"
-    />
-    <meta property="og:title" content="David Jokhadze" />
-    <meta
-      property="og:description"
-      content="David Jokhadze is a Web Developer, specializing in building websites and web applications"
-    />
-    <link rel="stylesheet" href="index.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="icon" href="/logo.png" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,800;1,200;1,300&display=swap"
-      rel="stylesheet"
+      rel="shortcut icon"
+      href="./assets/general/favicon.png"
+      type="image/x-icon"
     />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
-      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
-      crossorigin="anonymous"
-    />
-
-    <title>David Jokhadze</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Pixel Fresh Games</title>
   </head>
   <body>
-    <!-- Navbar -->
-    <nav id="navbar">
-      <a href="\" class="nav-logo">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          id="logo"
-          class="center"
-          width="60"
-          height="60"
-        >
-          <circle class="logo-circle" r="25" cx="30" cy="30" />
-          <text
-            class="logo-text"
-            x="31"
-            y="35"
-            text-anchor="middle"
-            alignment-baseline="middle"
-          >
-            DJ
-          </text>
-        </svg>
+    <div id="gallery">
+      <img src="" alt="scr" id="galleryImage" />
+    </div>
+    <div id="scroller">
+      <a href="#main">
+        <span class="scroll-dot">
+          <span class="scroll-icon active" id="main-scroller"></span>
+        </span>
       </a>
-      <a id="burger-link" class="hidden">
-        <div class="burger"></div>
+      <a href="#crypto-stars">
+        <span class="scroll-dot">
+          <span class="scroll-icon" id="crypto-stars-scroller"></span>
+        </span>
       </a>
-      <div class="nav-links">
-        <a class="nav-link hidden" href="#about-section">About</a>
-        <a class="nav-link hidden" href="#projects-section">Projects</a>
-        <a class="nav-link hidden" href="#contact-section">Contact</a>
-        <a
-          class="btn hidden"
-          href="https://drive.google.com/file/d/19LOfN9VOV2UGgPnpnl2KqiJk2Mn4G_F4/view?usp=sharing"
-          target="_blank"
-          >Resume</a
-        >
-      </div>
-    </nav>
-
-    <main id="main" class="hidden">
-      <!-- Contact links -->
-      <ul id="contact-links" class="hidden footer">
-        <li>
-          <a href="http://github.com/Dijinio" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/david-jokhadze-aa4403128/"
-            target="_blank"
-          >
-            <i class="fab fa-linkedin"></i>
-          </a>
-        </li>
-        <li>
-          <a href="http://twitter.com" target="_blank">
-            <i class="fab fa-twitter"></i>
-          </a>
-        </li>
-      </ul>
-      <!-- Home -->
-      <section id="home" class="hidden">
-        <div class="home-container">
-          <p>Hi, my name is</p>
-          <h1>David Jokhadze.</h1>
-          <h1>I build stuff for the web.</h1>
-          <h4>I'm a web developer, based in Europe.</h4>
-        </div>
-        <a href="#about-section" class="btn">See more...</a>
-      </section>
-
-      <!-- About -->
-      <span id="about-section"></span>
-      <section id="about" class="fade-in">
-        <h1 class="header">About Me</h1>
-        <div class="about-container">
-          <div class="about-content">
-            <p>Hello! I'm David, a web developer.</p>
+      <a href="#car-racer">
+        <span class="scroll-dot">
+          <span class="scroll-icon" id="car-racer-scroller"></span>
+        </span>
+      </a>
+    </div>
+    <!-- Main Page -->
+    <div id="wrapper">
+      <section id="main" class="page-wrapper">
+        <div class="page-container">
+          <div class="main-logo">
+            <img src="./assets/main/pixelfresh_logo_complete.png" alt="logo" />
+          </div>
+          <div class="description">
+            <p>Hey, my name is Ievgen, and my is Roman.</p>
             <p>
-              I was an IT Support Engineer for over 10 years before getting into
-              programming. I started self studying journey with books and online
-              lectures involving C++ and Python programming languages. Later I
-              decided to join a coding Bootcamp
-              <a href="https://www.lewagon.com/" target="_blank">"Le Wagon"</a>
-              in Portugal, where I learned Web Development in depth.
+              Here in Pixelfresh Games we fulfil our passion to develop games.
             </p>
-            <p>
-              Right now, I'm working as a Full-stack engineer (ReactJs, Python).
-            </p>
-            <p>Here are the technologies that I use mostly:</p>
-            <ul>
-              <li>JavaScript</li>
-              <li>ReactJs</li>
-              <li>HTML/CSS/SCSS</li>
-              <li>Node.js</li>
-              <li>Python</li>
-              <li>AWS</li>
-            </ul>
+            <p class="desc-introduce">Let me introduce our apps:</p>
           </div>
-          <div class="about-img">
-            <img src="./images/me2.jpg" alt="photo" />
+          <div class="main-icons">
+            <a href="#crypto-stars">
+              <img
+                src="./assets/main/icon_crypto_stars.png"
+                alt="crypto-stars"
+              />
+            </a>
+            <a href="#car-racer">
+              <img src="./assets/main/icon_grand_prix.png" alt="grand-prix" />
+            </a>
+            <a href="#doodle-race">
+              <img src="./assets/main/icon_doodle_race.png" alt="doodle-race" />
+            </a>
+            <a href="#morrok">
+              <img src="./assets/main/icon_morrok.png" alt="morrok" />
+            </a>
+            <a href="#doodle-climb">
+              <img
+                src="./assets/main/icon_doodle_climb.png"
+                alt="doodle-climb"
+              />
+            </a>
+          </div>
+          <div class="main-links">
+            <div>
+              <a href="mailto:pr@pixelfreshgtames.com"
+                >pr@pixelfreshgtames.com</a
+              >
+              <p>— business enquiries</p>
+            </div>
+            <div>
+              <a href="mailto:support@pixelfreshgames.com"
+                >support@pixelfreshgames.com</a
+              >
+              <p>— tech support</p>
+            </div>
+            <p class="pp">Privacy Policy</p>
           </div>
         </div>
+        <div class="page-footer">
+          <p>2015-2022 Pixelfresh Games</p>
+        </div>
+        <img class="cubes" src="./assets/general/cubes.png" alt="cubes" />
       </section>
-
-      <!-- Projects -->
-      <span id="projects-section"></span>
-      <section id="projects" class="fade-in">
-        <h1 class="header">Things I've built</h1>
-        <!-- Project 1 Reverse -->
-        <div class="proj-container reverse fade-in">
-          <div class="proj-img">
-            <a
-              href="https://dijinio-mernio-webchat.herokuapp.com/"
-              target="_blank"
-            >
-              <img src="./images/chat.jpg" alt="scheduler" />
-            </a>
-          </div>
-          <div class="proj-content reverse">
-            <div class="proj-title">
-              <p>Featured Project</p>
-              <h1>Web Chat Application</h1>
-            </div>
-            <p class="proj-desc">
-              Full-stack Chat application, with user authentication and
-              database. You can create or join available rooms and see who's
-              currently in a chat room.
-            </p>
-            <ul class="proj-tech">
-              <li>React</li>
-              <li>Node.js/Express</li>
-              <li>MongoDB</li>
-              <li>Socket.io</li>
-            </ul>
-            <div class="proj-links">
-              <a href="https://github.com/Dijinio/web-chat-app" target="_blank"
-                ><i class="fab fa-github"></i>
-              </a>
-              <a
-                href="https://dijinio-mernio-webchat.herokuapp.com/"
-                target="_blank"
-                ><i class="fas fa-external-link-alt"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-        <!-- Project 2 -->
-        <div class="proj-container fade-in">
-          <div class="proj-img">
-            <a
-              href="https://dijinio-mern-minesweeper.herokuapp.com/"
-              target="_blank"
-            >
-              <img src="./images/minesweeper.png" alt="minesweeper" />
-            </a>
-          </div>
-          <div class="proj-content">
-            <div class="proj-title">
-              <p>Featured Project</p>
-              <h1>Minesweeper</h1>
-            </div>
-            <p class="proj-desc">
-              A classic Windows OS game - Minesweeper. Full-stack version, with
-              opportunity to save records. All of the game logic lays in the
-              back-end to avoid cheating.
-            </p>
-            <ul class="proj-tech">
-              <li>React</li>
-              <li>Node.js/Express</li>
-              <li>MongoDB</li>
-            </ul>
-            <div class="proj-links">
-              <a
-                href="https://github.com/Dijinio/node-react-minesweeper"
-                target="_blank"
-                ><i class="fab fa-github"></i>
-              </a>
-              <a
-                href="https://dijinio-mern-minesweeper.herokuapp.com/"
-                target="_blank"
-                ><i class="fas fa-external-link-alt"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-        <!-- Project 3 (reverse)-->
-        <div class="proj-container reverse fade-in">
-          <div class="proj-img">
-            <a
-              href="https://dijinio-rails-react-scheduler.herokuapp.com/"
-              target="_blank"
-            >
-              <img src="./images/scheduler_wall.jpeg" alt="scheduler" />
-            </a>
-          </div>
-          <div class="proj-content reverse">
-            <div class="proj-title">
-              <p>Featured Project</p>
-              <h1>Scheduler</h1>
-            </div>
-            <p class="proj-desc">
-              Scheduler web application is an improved 'Todo app' with User
-              authentication and calendar.
-            </p>
-            <ul class="proj-tech">
-              <li>React</li>
-              <li>Ruby on Rails</li>
-              <li>Postgresql</li>
-            </ul>
-            <div class="proj-links">
-              <a
-                href="https://github.com/Dijinio/rails-react-scheduler"
-                target="_blank"
-                ><i class="fab fa-github"></i>
-              </a>
-              <a
-                href="https://dijinio-rails-react-scheduler.herokuapp.com/"
-                target="_blank"
-                ><i class="fas fa-external-link-alt"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-        <!-- Project 4 -->
-        <div class="proj-container fade-in">
-          <div class="proj-img">
-            <a
-              href="https://master.d2izcmao5iufvj.amplifyapp.com/"
-              target="_blank"
-            >
-              <img src="./images/memory_game.png" alt="memoryGame" />
-            </a>
-          </div>
-          <div class="proj-content">
-            <div class="proj-title">
-              <p>Featured Project</p>
-              <h1>Memory Game</h1>
-            </div>
-            <p class="proj-desc">Simple Card/Image Memory Game</p>
-            <ul class="proj-tech">
-              <li>React</li>
-            </ul>
-            <div class="proj-links">
-              <a href="https://github.com/Dijinio/memory-game" target="_blank"
-                ><i class="fab fa-github"></i>
-              </a>
-              <a
-                href="https://master.d2izcmao5iufvj.amplifyapp.com/"
-                target="_blank"
-                ><i class="fas fa-external-link-alt"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Other projects -->
-        <h1 class="op-header fade-in">Other Projects</h1>
-        <div class="other-projects fade-in">
-          <!-- OP-1 -->
-          <div class="op-container">
-            <div class="op-head">
-              <i class="far fa-file-code"></i>
-              <div class="proj-links">
+      <!-- Crypto Stars -->
+      <section id="crypto-stars" class="page-wrapper">
+        <img class="cubes" src="./assets/general/cubes.png" alt="cubes" />
+        <img
+          class="title-line"
+          src="./assets/general/title_line.png"
+          alt="line"
+        />
+        <div class="page-container">
+          <div class="page-header">
+            <img
+              class="title-icon"
+              src="./assets/crypto-stars/icon.png"
+              alt="logo"
+            />
+            <div class="title-apps">
+              <img
+                class="title-title"
+                src="./assets/crypto-stars/title.png"
+                alt=""
+              />
+              <div class="appstore">
                 <a
-                  href="https://github.com/Dijinio/color-generator"
+                  href="https://apps.apple.com/app/id1581562800"
                   target="_blank"
-                  ><i class="fab fa-github"></i>
+                >
+                  <img src="./assets/general/app_store.png" alt="apple" />
                 </a>
                 <a
-                  href="https://master.duzxqnaarryhi.amplifyapp.com/"
+                  href="https://play.google.com/store/apps/details?id=com.pixelfresh.CryptoStars"
                   target="_blank"
-                  ><i class="fas fa-external-link-alt"></i
-                ></a>
+                >
+                  <img src="./assets/general/google_play.png" alt="android" />
+                </a>
               </div>
-            </div>
-            <div class="op-body">
-              <h1>Color Generator</h1>
-              <p>Web application for generating color shades.</p>
-              <ul class="proj-tech">
-                <li>React</li>
-              </ul>
             </div>
           </div>
-          <!-- OP-2 -->
-          <div class="op-container">
-            <div class="op-head">
-              <i class="far fa-file-code"></i>
-              <div class="proj-links">
-                <a
-                  href="https://github.com/Dijinio/image-gallery"
-                  target="_blank"
-                  ><i class="fab fa-github"></i>
-                </a>
-                <a
-                  href="https://master.d3nsm73uzt1o2v.amplifyapp.com/"
-                  target="_blank"
-                  ><i class="fas fa-external-link-alt"></i
-                ></a>
-              </div>
+          <div class="page-body">
+            <div class="description">
+              <p>
+                <span class="yellow-text">Crypto Stars</span> is an interactive
+                cryptocurrency tutorial,
+              </p>
+              <p>which follows crypto trends in a playfulway.</p>
+              <p>
+                Each cryptocurrency (Bitcoin, Ethereum and more altcoins) is
+                presented as a star and it’s size reflects the volume of changes
+                in the crypto charts. By clicking on the any star you can
+                examine full information about it.
+              </p>
             </div>
-            <div class="op-body">
-              <h1>Image Gallery</h1>
-              <p>Image gallery react component with slider.</p>
-              <ul class="proj-tech">
-                <li>React</li>
-              </ul>
-            </div>
-          </div>
-          <!-- OP-3 -->
-          <div class="op-container">
-            <div class="op-head">
-              <i class="far fa-file-code"></i>
-              <div class="proj-links">
-                <a href="https://github.com/Dijinio/simon-says" target="_blank"
-                  ><i class="fab fa-github"></i>
-                </a>
-                <a
-                  href="https://master.d2bgo2cbjbftnu.amplifyapp.com/"
-                  target="_blank"
-                  ><i class="fas fa-external-link-alt"></i
-                ></a>
-              </div>
-            </div>
-            <div class="op-body">
-              <h1>Simon Says</h1>
-              <p>Popular game Simon Says</p>
-              <ul class="proj-tech">
-                <li>React</li>
-              </ul>
+            <div class="screenshots crypto">
+              <img
+                class="screenshot"
+                src="./assets/crypto-stars/screenshot_01_icon.png"
+                name="./assets/crypto-stars/screenshot_01.png"
+                alt="scr1"
+              />
+              <img
+                class="screenshot"
+                src="./assets/crypto-stars/screenshot_02_icon.png"
+                name="./assets/crypto-stars/screenshot_02.png"
+                alt="scr2"
+              />
+              <img
+                class="screenshot"
+                src="./assets/crypto-stars/screenshot_03_icon.png"
+                name="./assets/crypto-stars/screenshot_03.png"
+                alt="scr3"
+              />
             </div>
           </div>
         </div>
-      </section>
-
-      <!-- Contact -->
-      <span id="contact-section"></span>
-      <section id="contact" class="fade-in">
-        <div class="contact-container">
-          <h1>Get In Touch</h1>
-          <a href="mailto:djokhadze@gmail.com" class="btn"
-            ><i class="fas fa-envelope" style="margin-right: 1rem"></i
-            >djokhadze@gmail.com</a
-          >
-          <a href="skype:live:djokhadze?chat" target="_blank" class="btn"
-            ><i class="fab fa-skype" style="margin-right: 1rem"></i>djokhadze</a
-          >
-          <p class="page-footer">
-            David Jokhadze 2021
-            <a href="https://github.com/Dijinio/my-website" target="_blank"
-              ><i class="fas fa-link"></i
-            ></a>
+        <div class="page-footer">
+          <!-- Go to www.addthis.com/dashboard to customize your tools -->
+          <div class="addthis_inline_share_toolbox"></div>
+          <p>
+            <a
+              href="https://pixelfreshgames.com/crypto_stars/downloads/presskit.zip"
+              download="presskit.zip"
+              target="_blank"
+              class="yellow-text"
+              >Download</a
+            >
+            Presskit
           </p>
         </div>
       </section>
-    </main>
+
+      <!-- Pixel Car Racer -->
+      <section id="car-racer" class="page-wrapper">
+        <img class="cubes" src="./assets/general/cubes.png" alt="cubes" />
+        <img
+          class="title-line racer"
+          src="./assets/general/title_line.png"
+          alt="line"
+        />
+        <div class="page-container">
+          <img
+            src="./assets/pixel-car-racer/icon_decoration.png"
+            alt="decor"
+            class="title-decor"
+          />
+          <div class="page-header">
+            <img
+              class="title-icon"
+              src="./assets/pixel-car-racer/icon.png"
+              alt="logo"
+            />
+            <div class="title-apps">
+              <img
+                class="title-title"
+                src="./assets/pixel-car-racer/title.png"
+                alt=""
+              />
+              <div class="appstore">
+                <a
+                  href="https://apps.apple.com/us/app/id1088683002"
+                  target="_blank"
+                >
+                  <img src="./assets/general/app_store.png" alt="apple" />
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.pixelfresh.GrandPrix"
+                  target="_blank"
+                >
+                  <img src="./assets/general/google_play.png" alt="android" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="page-body">
+            <div class="description">
+              <p>
+                Incredibly addictive, dynamic blocky cars that give you a lot of
+                positive emotions! Take part in a breathtaking racer car game
+                where you have to rush along a track full of secrets, obstacles,
+                bonuses, jumps and finish first.
+              </p>
+            </div>
+            <div class="screenshots racer">
+              <div>
+                <img
+                  class="screenshot"
+                  src="./assets/pixel-car-racer/screenshot_01_icon.png"
+                  name="./assets/pixel-car-racer/screenshot_01.png"
+                  alt="scr1"
+                />
+                <img
+                  class="screenshot"
+                  src="./assets/pixel-car-racer/screenshot_02_icon.png"
+                  name="./assets/pixel-car-racer/screenshot_02.png"
+                  alt="scr2"
+                />
+              </div>
+              <div>
+                <img
+                  class="screenshot"
+                  src="./assets/pixel-car-racer/screenshot_03_icon.png"
+                  name="./assets/pixel-car-racer/screenshot_03.png"
+                  alt="scr3"
+                />
+                <img
+                  class="screenshot"
+                  src="./assets/pixel-car-racer/screenshot_04_icon.png"
+                  name="./assets/pixel-car-racer/screenshot_04.png"
+                  alt="scr4"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-footer">
+          <!-- Go to www.addthis.com/dashboard to customize your tools -->
+          <div class="addthis_inline_share_toolbox"></div>
+          <p>
+            <a
+              href="http://pixelfreshgames.com/grandprix/downloads/presskit.zip"
+              download="presskit.zip"
+              target="_blank"
+              class="yellow-text"
+              >Download</a
+            >
+            Presskit
+          </p>
+        </div>
+      </section>
+    </div>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script
+      type="text/javascript"
+      src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-61c70ad9692d5f6e"
+    ></script>
     <script src="index.js"></script>
   </body>
 </html>
