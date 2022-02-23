@@ -1,125 +1,121 @@
-const screenshots = document.querySelectorAll(".screenshot");
-screenshots.forEach((scr) => scr.addEventListener("click", handleGallery));
+// Page Loading
+const logo = document.getElementById("logo");
+const main = document.getElementById("main");
+const navLinksChilds = [...document.querySelector(".nav-links").children];
+const home = document.getElementById("home");
+const contactLinks = document.getElementById("contact-links");
 
-const scrollerButtons = [...document.getElementById("scroller").children];
-const scrollerIcons = [...document.querySelectorAll(".scroll-icon")];
-const icons = [...document.querySelector(".main-icons").children];
-const sections = [...document.querySelectorAll(".page-wrapper")];
-const wrapper = document.getElementById("wrapper");
-const sectionSize = sections.length;
-let sectionIndex = 0;
+setTimeout(() => {
+  logo.classList.remove("center");
+}, 2500);
 
-icons.forEach((icon) => {
-  icon.addEventListener("click", (e) => {
-    e.preventDefault();
-    const section = getSection(icon);
-    if (!section) return;
-    wrapper.style.transform = `translateY(-${sectionIndex * 100}vh)`;
-    activateIcon(section);
+setTimeout(() => {
+  main.classList.remove("hidden");
+  navLinksChilds.forEach((link) => {
+    link.classList.remove("hidden");
   });
-});
+}, 3000);
 
-scrollerButtons.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    const section = getSection(btn);
-    wrapper.style.transform = `translateY(-${sectionIndex * 100}vh)`;
-    activateIcon(section);
-  });
-});
+setTimeout(() => {
+  home.classList.remove("hidden");
+}, 3500);
 
-function getSection(element) {
-  const href = element.attributes.href.nodeValue;
-  // set global section index
-  const sIndex = sections.findIndex((s) => s.id === href.replace("#", ""));
-  if (sIndex > -1) {
-    sectionIndex = sIndex;
-  }
-  return sections.find((s) => s.id === href.replace("#", ""));
-}
+setTimeout(() => {
+  contactLinks.classList.remove("hidden");
+}, 4000);
 
-function activateIcon(section) {
-  const iconId = `${section.id}-scroller`;
-  const icon = document.getElementById(iconId);
-  clearScroller();
-  icon.classList.add("active");
-}
+// Fade in Observer
+const fadeIns = [...document.getElementsByClassName("fade-in")];
+const obsOptions = { rootMargin: "0px 0px -200px 0px" };
 
-let pause = false;
-
-document.addEventListener("wheel", (e) => {
-  if (pause) return;
-  if (e.deltaY < 0) {
-    handlePageChange(false);
-  } else {
-    handlePageChange(true);
-  }
-});
-
-document.addEventListener("touchstart", (e) => {
-  const startPos = e.touches[0].clientY;
-  const startTime = new Date();
-
-  document.addEventListener("touchend", (e) => {
-    if (pause) return;
-
-    const endPos = e.changedTouches[0].clientY;
-    const timeElapsed = new Date() - startTime;
-
-    if (startPos + 100 < endPos && timeElapsed < 1000) {
-      handlePageChange(false);
-    }
-    if (startPos - 100 > endPos && timeElapsed < 1000) {
-      handlePageChange(true);
+const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      return;
+    } else {
+      entry.target.classList.remove("fade-in");
+      appearOnScroll.unobserve(entry.target);
     }
   });
+}, obsOptions);
+
+fadeIns.forEach((tag) => {
+  appearOnScroll.observe(tag);
 });
 
-function handlePageChange(next) {
-  pause = true;
+// Navbar Observer
+const navbar = document.getElementById("navbar");
+const homeSection = document.getElementById("home");
 
-  const id = manageSection(sectionSize, next);
-  const scrollAmount = id * 100;
-  wrapper.style.transform = `translateY(-${scrollAmount}vh)`;
+const fixNav = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting || main.classList.contains("hidden")) {
+        navbar.classList.remove("scroll");
+      } else {
+        navbar.classList.add("scroll");
+      }
+    });
+  },
+  { threshold: 0.8 }
+);
 
-  const section = sections[id];
-  activateIcon(section);
+fixNav.observe(homeSection);
 
-  setTimeout(() => {
-    pause = false;
-  }, 700);
-}
+// Contacts Observer and resize listener
+const contactSection = document.getElementById("contact");
 
-function manageSection(size, up) {
-  if (up) {
-    if (sectionIndex >= size - 1) return sectionIndex;
-    return (sectionIndex += 1);
+let width = window.innerWidth;
+
+window.onresize = () => {
+  width = window.innerWidth;
+
+  if (width < 1024) {
+    contactLinks.classList.add("footer");
   } else {
-    if (sectionIndex <= 0) return sectionIndex;
-    return (sectionIndex -= 1);
+    contactLinks.classList.remove("footer");
   }
+};
+
+const showContactInfo = new IntersectionObserver(
+  (entries) => {
+    if (width < 1024) return;
+
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        contactLinks.classList.remove("footer");
+      } else {
+        contactLinks.classList.add("footer");
+      }
+    });
+  },
+  { threshold: 0.9 }
+);
+
+showContactInfo.observe(contactSection);
+
+// Navbar responsive menu
+const burger = document.getElementById("burger-link");
+const navLinks = document.querySelector(".nav-links");
+
+setTimeout(() => {
+  burger.classList.remove("hidden");
+}, 3000);
+
+burger.addEventListener("click", () => {
+  burger.classList.toggle("clicked");
+  navLinks.classList.toggle("show");
+  main.classList.toggle("blur");
+});
+
+function hideSidebar() {
+  burger.classList.remove("clicked");
+  navLinks.classList.remove("show");
+  main.classList.remove("blur");
 }
 
-function clearScroller() {
-  scrollerIcons.forEach((scr) => {
-    scr.classList.remove("active");
-  });
-}
+main.addEventListener("click", hideSidebar);
 
-function handleGallery(e) {
-  const iconSrc = e.target.src;
-  const imgSrc = iconSrc.replace("_icon.png", ".jpg");
-  const gallery = document.getElementById("gallery");
-
-  gallery.classList.add("show");
-
-  const domImage = document.getElementById("galleryImage");
-  domImage.src = imgSrc;
-
-  domImage.style.opacity = 1;
-  gallery.addEventListener("click", () => {
-    gallery.classList.remove("show");
-    domImage.src = "";
-    domImage.style.opacity = 0;
-  });
-}
+navLinksChilds.forEach((link) => {
+  link.addEventListener("click", hideSidebar);
+});
